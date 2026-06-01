@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* Custom slide-in animations for a premium UX */
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* CSS Print Overrides */
+@media print {
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Make sure the targeted element takes full page size with no box shadow or margins */
+  .invoice-print-container {
+    width: 210mm !important;
+    min-height: 297mm !important;
+    padding: 10mm !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transform-origin: top left !important;
+    page-break-inside: avoid !important;
+    page-break-after: avoid !important;
+    page-break-before: avoid !important;
+  }
+
+  /* Reset print page borders/margins */
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+}
+
+/* Force Aptos and its variations for the printable invoice elements (screen & print) */
+.invoice-print-container,
+.invoice-print-container * {
+  font-family: 'Aptos', 'Segoe UI', Calibri, Arial, sans-serif !important;
+}
