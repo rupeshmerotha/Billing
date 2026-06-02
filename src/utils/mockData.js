@@ -4,7 +4,7 @@ export const DEFAULT_COMPANY_INFO = {
   name: "Bhudev Agro",
   tagline: "Trust in every seed, Promise in every harvest",
   address: "REG. OFFICE - 10 , ShreeNath Awas, Bundi Road, Kota (Raj) - 324008",
-  phones: "+91 97573 599491",
+  phones: "+91 92573 59491",
   email: "bhudevseeds@gmail.com",
   gst: "08AQMPM6732H1ZH",
   license1: "SS/2023-24/32367",
