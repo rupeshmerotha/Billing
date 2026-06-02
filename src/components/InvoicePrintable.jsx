@@ -1,4 +1,5 @@
 import React from 'react';
+import { DEFAULT_COMPANY_INFO } from '../utils/mockData';
 import bhudevLogo from '../assets/bhudev_logo_png.png';
 import signImg from '../assets/sign.png';
 
@@ -58,7 +59,7 @@ export const numberToWords = (num) => {
   return `Rupees ${word.trim()} Only`;
 };
 
-export const InvoicePrintable = React.forwardRef(({ invoice, companyInfo }, ref) => {
+export const InvoicePrintable = React.forwardRef(({ invoice, companyInfo = DEFAULT_COMPANY_INFO }, ref) => {
   if (!invoice) return null;
 
   const items = invoice.items || [];
