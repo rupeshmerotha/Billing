@@ -39,7 +39,7 @@ const Login = () => {
             <div className="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center mb-3 shadow-inner border border-emerald-100">
               <Sprout className="w-9 h-9 text-emerald-600 animate-bounce" style={{ animationDuration: '3s' }} />
             </div>
-            <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Bhudev Seeds (BTC)</h1>
+            <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Bhudev Agro</h1>
             <p className="text-sm text-emerald-700 font-medium">Billing Portal</p>
           </div>
 

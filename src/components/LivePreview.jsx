@@ -443,11 +443,10 @@ const LivePreview = () => {
     <div className="h-screen bg-slate-100 flex flex-col font-sans overflow-hidden">
       {/* Toast Notification */}
       {notification && (
-        <div className={`fixed top-4 right-4 z-50 p-4 rounded-xl shadow-lg border flex items-center gap-2 transform transition-all duration-300 animate-slide-in ${
-          notification.type === 'info'
+        <div className={`fixed top-4 right-4 z-50 p-4 rounded-xl shadow-lg border flex items-center gap-2 transform transition-all duration-300 animate-slide-in ${notification.type === 'info'
             ? 'bg-blue-50 border-blue-200 text-blue-800'
             : 'bg-emerald-50 border-emerald-200 text-emerald-800'
-        }`}>
+          }`}>
           <CheckCircle className="w-5 h-5 shrink-0" />
           <span className="text-sm font-semibold">{notification.message}</span>
         </div>
@@ -470,7 +469,7 @@ const LivePreview = () => {
             <h1 className="text-lg font-bold tracking-tight">
               {activeInvoice ? `Live Preview: ${activeInvoice.invoiceNo}` : 'Live Preview'}
             </h1>
-            <p className="text-[9px] text-emerald-200 uppercase tracking-widest font-bold">Bhudev Seeds (BTC)</p>
+            <p className="text-[9px] text-emerald-200 uppercase tracking-widest font-bold">Bhudev Agro</p>
           </div>
         </div>
 
@@ -503,7 +502,7 @@ const LivePreview = () => {
 
       {/* RENDER BOX AREA */}
       {activeInvoice ? (
-        <main 
+        <main
           ref={containerRef}
           className="flex-1 overflow-hidden p-6 flex justify-center items-center bg-slate-200/50"
         >

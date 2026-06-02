@@ -432,8 +432,8 @@ const OldInvoices = () => {
       {/* Notification Toast */}
       {notification && (
         <div className={`fixed top-4 right-4 z-50 p-4 rounded-xl shadow-lg border flex items-center gap-2 transform transition-all duration-300 animate-slide-in ${notification.type === 'info'
-            ? 'bg-blue-50 border-blue-200 text-blue-800'
-            : 'bg-emerald-50 border-emerald-200 text-emerald-800'
+          ? 'bg-blue-50 border-blue-200 text-blue-800'
+          : 'bg-emerald-50 border-emerald-200 text-emerald-800'
           }`}>
           <CheckCircle className="w-5 h-5 shrink-0" />
           <span className="text-sm font-semibold">{notification.message}</span>
@@ -448,7 +448,7 @@ const OldInvoices = () => {
           </div>
           <div>
             <h1 className="text-xl font-bold tracking-tight">Invoice History Archives</h1>
-            <p className="text-[10px] text-emerald-200 uppercase tracking-widest font-bold">Bhudev Seeds (BTC)</p>
+            <p className="text-[10px] text-emerald-200 uppercase tracking-widest font-bold">Bhudev Agro</p>
           </div>
         </div>
 

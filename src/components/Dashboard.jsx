@@ -654,7 +654,7 @@ const Dashboard = () => {
             <Sprout className="w-5.5 h-5.5 text-emerald-300 animate-pulse" />
           </div>
           <div>
-            <h1 className="text-lg font-bold tracking-tight">Bhudev Seeds (BTC)</h1>
+            <h1 className="text-lg font-bold tracking-tight">Bhudev Agro</h1>
             <p className="text-[9px] text-emerald-200 uppercase tracking-widest font-bold">Billing Management System</p>
           </div>
         </div>
