@@ -163,7 +163,7 @@ const OldInvoices = () => {
     doc.text(`${companyInfo.license2 || 'KTPT-25113'}`, 190, 29, { align: 'right' });
     doc.setFont('Helvetica', 'bold');
     doc.setTextColor(15, 23, 42);
-    doc.text(`GSTIN: ${companyInfo.gstin || '08AQMPM6732H1ZH'}`, 190, 34, { align: 'right' });
+    doc.text(`GST: ${companyInfo.gst || '08AQMPM6732H1ZH'}`, 190, 34, { align: 'right' });
 
     // Divider
     doc.setDrawColor(21, 128, 61);
@@ -431,11 +431,10 @@ const OldInvoices = () => {
     <div className="min-h-screen bg-slate-100 flex flex-col font-sans">
       {/* Notification Toast */}
       {notification && (
-        <div className={`fixed top-4 right-4 z-50 p-4 rounded-xl shadow-lg border flex items-center gap-2 transform transition-all duration-300 animate-slide-in ${
-          notification.type === 'info'
+        <div className={`fixed top-4 right-4 z-50 p-4 rounded-xl shadow-lg border flex items-center gap-2 transform transition-all duration-300 animate-slide-in ${notification.type === 'info'
             ? 'bg-blue-50 border-blue-200 text-blue-800'
             : 'bg-emerald-50 border-emerald-200 text-emerald-800'
-        }`}>
+          }`}>
           <CheckCircle className="w-5 h-5 shrink-0" />
           <span className="text-sm font-semibold">{notification.message}</span>
         </div>
@@ -500,7 +499,7 @@ const OldInvoices = () => {
       {/* FILTER & INVOICES LIST GRID */}
       <main className="flex-1 overflow-y-auto p-6 md:p-8">
         <div className="max-w-7xl mx-auto space-y-6">
-          
+
           {/* Search bar */}
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 flex items-center gap-3">
             <Search className="w-5 h-5 text-slate-400 shrink-0" />
@@ -527,7 +526,7 @@ const OldInvoices = () => {
               <FileText className="w-16 h-16 text-slate-300 mx-auto" />
               <h3 className="text-lg font-bold text-slate-700">No Invoices Found</h3>
               <p className="text-xs text-slate-500 max-w-md mx-auto">
-                {searchQuery 
+                {searchQuery
                   ? "We couldn't find any generated invoices matching your search criteria. Try modifying your keywords."
                   : "You haven't generated any invoices yet. Go back to billing to start drafting your first bill!"}
               </p>
@@ -611,7 +610,7 @@ const OldInvoices = () => {
                         >
                           View/Edit
                         </button>
-                        
+
                         <button
                           onClick={() => handleDownloadPDF(inv)}
                           className="p-1.5 rounded-lg text-slate-500 hover:text-emerald-700 hover:bg-slate-100 transition-colors"

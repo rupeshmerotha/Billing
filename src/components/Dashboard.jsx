@@ -40,7 +40,7 @@ const Dashboard = () => {
 
   // URL Parameter selection for active invoice
   const [selectedInvoiceId, setSelectedInvoiceId] = useState('');
-  
+
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [notification, setNotification] = useState(null);
 
@@ -364,7 +364,7 @@ const Dashboard = () => {
     doc.text(`${companyInfo.license2 || 'KTPT-25113'}`, 190, 29, { align: 'right' });
     doc.setFont('Helvetica', 'bold');
     doc.setTextColor(15, 23, 42);
-    doc.text(`GSTIN: ${companyInfo.gstin || '08AQMPM6732H1ZH'}`, 190, 34, { align: 'right' });
+    doc.text(`GST: ${companyInfo.gst || '08AQMPM6732H1ZH'}`, 190, 34, { align: 'right' });
 
     doc.setDrawColor(21, 128, 61);
     doc.setLineWidth(0.8);
@@ -638,11 +638,10 @@ const Dashboard = () => {
     <div className="h-screen bg-slate-100 flex flex-col font-sans overflow-hidden">
       {/* Toast Notification */}
       {notification && (
-        <div className={`fixed top-4 right-4 z-50 p-4 rounded-xl shadow-lg border flex items-center gap-2 transform transition-all duration-300 animate-slide-in ${
-          notification.type === 'info'
-            ? 'bg-blue-50 border-blue-200 text-blue-800'
-            : 'bg-emerald-50 border-emerald-200 text-emerald-800'
-        }`}>
+        <div className={`fixed top-4 right-4 z-50 p-4 rounded-xl shadow-lg border flex items-center gap-2 transform transition-all duration-300 animate-slide-in ${notification.type === 'info'
+          ? 'bg-blue-50 border-blue-200 text-blue-800'
+          : 'bg-emerald-50 border-emerald-200 text-emerald-800'
+          }`}>
           <CheckCircle className="w-5 h-5 shrink-0" />
           <span className="text-sm font-semibold">{notification.message}</span>
         </div>
@@ -708,14 +707,14 @@ const Dashboard = () => {
       <div className="flex-1 flex overflow-hidden">
         {activeInvoice ? (
           <section className="w-full bg-white flex flex-col p-2.5 space-y-2.5 overflow-hidden h-full">
-            
+
             {/* SECTION 1: CUSTOMER METADATA (Horizontal Bar) */}
             <div className="bg-slate-50/70 border border-slate-200 rounded-xl p-2.5 space-y-1 shrink-0">
               <div className="flex items-center gap-1 text-[9px] font-bold text-slate-500 uppercase tracking-wider">
                 <User className="w-3.5 h-3.5 text-emerald-600" />
                 <span>Customer & Invoice Metadata</span>
               </div>
-              
+
               <div className="grid grid-cols-4 gap-3 text-xs">
                 <div>
                   <label className="block font-bold text-slate-700 mb-0.5">Customer Name</label>
@@ -763,7 +762,7 @@ const Dashboard = () => {
 
             {/* SECTION 2: PRODUCTS FORM & TABLE LIST (Middle Panel) */}
             <div className="flex-1 min-h-0 grid grid-cols-12 gap-3.5 overflow-hidden">
-              
+
               {/* 2A: Add Product Form (Col-span-5) */}
               <form onSubmit={handleAddItem} className="col-span-5 border border-slate-200 rounded-xl p-2.5 flex flex-col justify-between overflow-hidden bg-white shadow-sm h-full shrink-0">
                 <div className="font-bold text-slate-700 border-b pb-0.5 flex items-center gap-1 uppercase tracking-wider text-[9px] shrink-0">
@@ -1093,11 +1092,11 @@ const Dashboard = () => {
                 </div>
 
                 <div>
-                  <label className="block font-bold text-slate-700 mb-1">GSTIN Number</label>
+                  <label className="block font-bold text-slate-700 mb-1">GST Number</label>
                   <input
                     type="text"
-                    value={companyInfo.gstin}
-                    onChange={(e) => setCompanyInfo({ ...companyInfo, gstin: e.target.value })}
+                    value={companyInfo.gst}
+                    onChange={(e) => setCompanyInfo({ ...companyInfo, gst: e.target.value })}
                     className="w-full p-2 border border-slate-300 rounded-lg focus:outline-none"
                   />
                 </div>

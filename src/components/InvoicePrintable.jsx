@@ -1,5 +1,6 @@
 import React from 'react';
 import bhudevLogo from '../assets/bhudev_logo_png.png';
+import signImg from '../assets/sign.png';
 
 // Helper to convert numbers to Indian currency words
 export const numberToWords = (num) => {
@@ -91,8 +92,8 @@ export const InvoicePrintable = React.forwardRef(({ invoice, companyInfo }, ref)
         {/* ================= HEADER ================= */}
         <div className="flex items-start justify-between border-b-2 border-emerald-800 pb-3 mb-4">
           {/* Logo */}
-          <div className="w-1/4 flex flex-col items-start justify-center -mt-7">
-            <img src={bhudevLogo} alt="Bhudev Seeds Logo" className="h-[148px] w-auto shrink-0" />
+          <div className="w-1/4 flex flex-col items-start justify-center -mt-8">
+            <img src={bhudevLogo} alt="Bhudev Seeds Logo" className="h-[140px] w-auto shrink-0" />
           </div>
 
           {/* Company Details */}
@@ -114,7 +115,7 @@ export const InvoicePrintable = React.forwardRef(({ invoice, companyInfo }, ref)
             <span className="text-xs font-bold text-emerald-800 uppercase tracking-wider font-sans">Licenses & GST</span>
             <span>License No: {companyInfo.license1 || 'SS/2023-24/32367'}</span>
             <span>{companyInfo.license2 || 'KTPT-25113'}</span>
-            <span className="font-bold text-slate-800 mt-1">GSTIN: <span className="font-mono">{companyInfo.gstin || '08AQMPM6732H1ZH'}</span></span>
+            <span className="font-bold text-slate-800 mt-1">GST: <span className="font-mono">{companyInfo.gst || '08AQMPM6732H1ZH'}</span></span>
           </div>
         </div>
 
@@ -289,7 +290,7 @@ export const InvoicePrintable = React.forwardRef(({ invoice, companyInfo }, ref)
             <p className="text-[10px] font-bold text-emerald-900 uppercase">For {companyInfo.name}</p>
             <div className="h-12 flex items-center justify-end pr-6">
               {/* Subtle design flourish for signature placeholder */}
-              <span className="text-[10px] italic text-slate-300 font-sans tracking-widest uppercase">Authorized Signatory</span>
+              <img src={signImg} alt="Authorized Signatory" className="h-[50px] w-auto" />
             </div>
             <div className="w-40 border-t border-slate-400 my-1"></div>
             <p className="text-[10px] text-slate-600 font-sans font-semibold">Authorised Signatory</p>

@@ -6,7 +6,7 @@ export const DEFAULT_COMPANY_INFO = {
   address: "REG. OFFICE - 10 , ShreeNath Awas, Bundi Road, Kota (Raj) - 324008",
   phones: "+91 97573 599491",
   email: "bhudevseeds@gmail.com",
-  gstin: "08AQMPM6732H1ZH",
+  gst: "08AQMPM6732H1ZH",
   license1: "SS/2023-24/32367",
   license2: "KTPT-25113",
   bankDetails: {
